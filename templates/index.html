@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Simulator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body class="page-home">
+    <main class="layout home-layout">
+        <section class="hero-card">
+            <p class="eyebrow">Financial planning with public data</p>
+            <h1>Simulation dashboard to support your investment decisions</h1>
+            <p class="hero-text">
+                This Flask project compares wealth growth, inflation impact, and performance across
+                popular Brazilian investment benchmarks using Central Bank data series.
+            </p>
+            <div class="badge-row">
+                <span class="info-badge">SELIC</span>
+                <span class="info-badge">IPCA</span>
+                <span class="info-badge">Savings</span>
+            </div>
+        </section>
+
+        <section class="links-grid">
+            <a class="feature-link" href="{{url_for('accumulated_vs_inflation')}}">
+                <h2>Accumulated vs Inflation</h2>
+                <p>Track nominal and real growth from monthly contributions over time.</p>
+                <span>Run simulation</span>
+            </a>
+
+            <a class="feature-link" href="{{url_for('heritage_composition')}}">
+                <h2>Wealth Composition</h2>
+                <p>See how much of your final balance comes from contributions versus returns.</p>
+                <span>View composition</span>
+            </a>
+
+            <a class="feature-link" href="{{url_for('savings')}}">
+                <h2>Savings vs SELIC</h2>
+                <p>Compare both paths to evaluate long-term opportunity cost.</p>
+                <span>Compare returns</span>
+            </a>
+        </section>
+    </main>
+</body>
+</html>

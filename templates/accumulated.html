@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accumulated vs Inflation</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='accumulated.css')}}">
+</head>
+<body class="page-calc page-accumulated">
+    <main class="layout calc-layout">
+        <header class="page-header">
+            <a class="back-link" href="{{url_for('index')}}">Back to dashboard</a>
+            <h1>Accumulated vs Inflation</h1>
+            <p>
+                Simulate monthly contributions and see the difference between nominal and real balances
+                when purchasing power erosion is considered.
+            </p>
+        </header>
+
+        <section class="form-card">
+            <form action="{{url_for('accumulated_vs_inflation')}}" method="POST" class="investment-form">
+                <div class="form-field">
+                    <label for="amount">Monthly contribution (R$)</label>
+                    <input type="number" id="amount" name="amount" step="0.01" min="1" placeholder="e.g. 500" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="months">Time horizon (months)</label>
+                    <input type="number" id="months" name="months" min="1" placeholder="e.g. 36" required>
+                </div>
+
+                <div class="form-action">
+                    <button type="submit">Generate chart</button>
+                </div>
+            </form>
+        </section>
+
+        {% if plot %}
+            <section class="chart-card">
+                {{plot | safe}}
+            </section>
+        {% else %}
+            <section class="chart-card empty-chart">
+                <p>Fill in the fields to visualize investment growth against inflation.</p>
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>

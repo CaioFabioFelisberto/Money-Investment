@@ -1,0 +1,12 @@
+.page-savings .page-header {
+	background: linear-gradient(135deg, #ffffff 0%, #eef7fd 100%);
+	border-color: #c9deee;
+}
+
+.page-savings .form-card {
+	border-top: 4px solid #2b88a5;
+}
+
+.page-savings .chart-card {
+	border-top: 4px solid #278154;
+}

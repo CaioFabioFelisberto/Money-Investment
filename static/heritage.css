@@ -1,0 +1,12 @@
+.page-heritage .page-header {
+	background: linear-gradient(135deg, #ffffff 0%, #f8f8ef 100%);
+	border-color: #e4dcc0;
+}
+
+.page-heritage .form-card {
+	border-top: 4px solid #c4a23d;
+}
+
+.page-heritage .chart-card {
+	border-top: 4px solid #2f7f9a;
+}

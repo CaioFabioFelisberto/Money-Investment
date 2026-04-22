@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings vs SELIC</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='savings.css')}}">
+</head>
+<body class="page-calc page-savings">
+    <main class="layout calc-layout">
+        <header class="page-header">
+            <a class="back-link" href="{{url_for('index')}}">Back to dashboard</a>
+            <h1>Savings vs SELIC</h1>
+            <p>
+                Compare balance trajectories to identify return differences and make
+                more informed long-term allocation decisions.
+            </p>
+        </header>
+
+        <section class="form-card">
+            <form action="{{ url_for('savings') }}" method="POST" class="investment-form">
+                <div class="form-field">
+                    <label for="amount">Monthly contribution (R$)</label>
+                    <input type="number" id="amount" name="amount" step="0.01" min="1" placeholder="e.g. 400" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="months">Time horizon (months)</label>
+                    <input type="number" id="months" name="months" min="1" step="1" placeholder="e.g. 48" required>
+                </div>
+
+                <div class="form-action">
+                    <button type="submit">Compare scenarios</button>
+                </div>
+            </form>
+        </section>
+
+        {% if plot %}
+            <section class="chart-card">
+                {{ plot | safe }}
+            </section>
+        {% else %}
+            <section class="chart-card empty-chart">
+                <p>Provide your values to generate the growth comparison between savings and SELIC.</p>
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>

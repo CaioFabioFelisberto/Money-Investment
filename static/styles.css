@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+	--bg-main: #f3f8f4;
+	--bg-soft: #e9f4ee;
+	--card: #ffffff;
+	--text: #18322a;
+	--muted: #4b6b5f;
+	--primary: #177245;
+	--primary-2: #0f8a93;
+	--accent: #d2a63d;
+	--line: #cfe4d9;
+	--shadow: 0 16px 40px rgba(23, 114, 69, 0.12);
+	--radius-lg: 22px;
+	--radius-md: 14px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	color: var(--text);
+	font-family: 'Space Grotesk', sans-serif;
+	background:
+		radial-gradient(circle at 8% 10%, #d8efdf 0%, transparent 28%),
+		radial-gradient(circle at 92% 18%, #d9edf4 0%, transparent 25%),
+		linear-gradient(180deg, #f8fcf9 0%, #eef7f2 100%);
+}
+
+.layout {
+	width: min(1100px, 92vw);
+	margin: 0 auto;
+	padding: 42px 0 56px;
+}
+
+.home-layout {
+	display: grid;
+	gap: 28px;
+}
+
+.hero-card {
+	background: linear-gradient(130deg, #ffffff 0%, #f3fbf6 65%, #edf9ff 100%);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-lg);
+	padding: clamp(22px, 4vw, 38px);
+	box-shadow: var(--shadow);
+	animation: floatIn 0.65s ease;
+}
+
+.eyebrow {
+	margin: 0;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	color: var(--primary-2);
+	font-weight: 700;
+	font-size: 0.76rem;
+}
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+	margin: 10px 0 10px;
+	line-height: 1.25;
+}
+
+.hero-text,
+.page-header p {
+	color: var(--muted);
+	font-size: 1rem;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.badge-row {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.info-badge {
+	border: 1px solid #b9ddc8;
+	background: #f3fcf7;
+	color: var(--primary);
+	font-weight: 700;
+	font-size: 0.8rem;
+	border-radius: 999px;
+	padding: 8px 12px;
+}
+
+.links-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.feature-link {
+	text-decoration: none;
+	color: inherit;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	padding: 20px;
+	box-shadow: 0 8px 24px rgba(24, 50, 42, 0.06);
+	display: grid;
+	gap: 10px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-link h2 {
+	margin: 0;
+	font-size: 1.2rem;
+	font-family: 'Merriweather', serif;
+}
+
+.feature-link p {
+	margin: 0;
+	color: var(--muted);
+	line-height: 1.5;
+}
+
+.feature-link span {
+	display: inline-block;
+	margin-top: 2px;
+	color: var(--primary-2);
+	font-weight: 700;
+}
+
+.feature-link:hover {
+	transform: translateY(-4px);
+	border-color: #abd4bd;
+	box-shadow: 0 14px 34px rgba(23, 114, 69, 0.13);
+}
+
+.calc-layout {
+	display: grid;
+	gap: 18px;
+}
+
+.page-header {
+	background: rgba(255, 255, 255, 0.82);
+	backdrop-filter: blur(3px);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	padding: 22px;
+}
+
+.back-link {
+	text-decoration: none;
+	color: var(--primary-2);
+	font-weight: 700;
+	font-size: 0.92rem;
+}
+
+.page-header h1 {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+}
+
+.form-card,
+.chart-card {
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--radius-md);
+	padding: 20px;
+	box-shadow: 0 8px 22px rgba(24, 50, 42, 0.07);
+}
+
+.investment-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+	align-items: start;
+}
+
+.form-field {
+	display: grid;
+	gap: 8px;
+}
+
+.investment-form label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--muted);
+}
+
+.investment-form input {
+	height: 46px;
+	border: 1px solid #bfd9cb;
+	border-radius: 10px;
+	padding: 0 12px;
+	font-size: 1rem;
+	font-family: inherit;
+	background: #fbfefc;
+}
+
+.form-action {
+	grid-column: 1 / -1;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.investment-form button {
+	height: 46px;
+	border: 0;
+	border-radius: 10px;
+	padding: 0 18px;
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 0.95rem;
+	color: #ffffff;
+	background: linear-gradient(120deg, var(--primary) 0%, var(--primary-2) 100%);
+	cursor: pointer;
+	transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.investment-form button:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.04);
+}
+
+.empty-chart {
+	display: grid;
+	place-items: center;
+	min-height: 220px;
+	border-style: dashed;
+	color: var(--muted);
+	text-align: center;
+}
+
+.chart-card .js-plotly-plot,
+.chart-card .plotly-graph-div {
+	width: 100% !important;
+}
+
+@keyframes floatIn {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 920px) {
+	.links-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.investment-form {
+		grid-template-columns: 1fr;
+	}
+
+	.form-action {
+		grid-column: auto;
+		justify-content: stretch;
+	}
+
+	.investment-form button,
+	.investment-form input {
+		width: 100%;
+	}
+}
